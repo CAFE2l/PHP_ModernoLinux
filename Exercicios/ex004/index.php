@@ -22,8 +22,17 @@
         //var_dump($casado);
         //echo "O valor é $casado";
 
-        $vet = [6, 2,9, 3, 5];
-        print_r($vet);
+        //$vet = [6, 2,9, 3, 5];
+        //print_r($vet);
+
+        class Pessoa{
+            private string $nome;
+
+        }
+
+
+        $p = new Pessoa();
+        var_dump($p);
     ?>
 </body>
 </html>
