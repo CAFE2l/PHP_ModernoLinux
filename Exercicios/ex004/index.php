@@ -8,7 +8,7 @@
 <body>
     <h1>Teste de tipos primitivos</h1>
     <?php
-        $num = 300;
+        $num = 0x1A;
         echo "O valor da variável é $num";
     
     ?>
