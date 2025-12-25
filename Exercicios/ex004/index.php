@@ -13,6 +13,8 @@
         $valor = 45.2;
         var_dump($valor);
 
+        echo "\n";
+
         $num = 3e2;
         echo "O valor é $num";
         var_dump($num);
