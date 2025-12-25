@@ -10,7 +10,7 @@
     <?php
         //$num = 0b1010;
         //echo "O valor da variável é $num";
-        $valor = 300;
+        $valor = 45.2;
         var_dump($valor);
     ?>
 </body>
