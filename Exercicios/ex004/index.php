@@ -15,7 +15,7 @@
 
         echo "\n";
 
-        $num = 3e2;
+        $num = (integer)3e2;
         echo "<br>O valor é $num";
         var_dump($num);
     ?>
