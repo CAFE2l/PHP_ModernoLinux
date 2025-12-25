@@ -7,6 +7,10 @@
 </head>
 <body>
     <h1>Exemplo de PHP</h1>
-    <?php ?>
+    <?php 
+        echo "Hoje é dia " . date("d/m/Y");
+        echo " e a hora atual é " . date("H:i:s");
+        
+    ?>
 </body>
 </html>
