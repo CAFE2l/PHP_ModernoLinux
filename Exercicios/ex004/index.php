@@ -10,14 +10,20 @@
     <?php
         //$num = 0b1010;
         //echo "O valor da variável é $num";
-        $valor = 45.2;
-        var_dump($valor);
+        //$valor = 45.2;
+        //var_dump($valor);
 
-        echo "\n";
 
-        $num = (integer)3e2;
-        echo "<br>O valor é $num";
-        var_dump($num);
+        //$num = (integer)3e2;
+        //echo "<br>O valor é $num";
+        //var_dump($num);
+
+        //$casado = true;
+        //var_dump($casado);
+        //echo "O valor é $casado";
+
+        $vet = [6, 2,9, 3, 5];
+        print_r($vet);
     ?>
 </body>
 </html>
