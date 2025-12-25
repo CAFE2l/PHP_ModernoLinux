@@ -8,9 +8,10 @@
 <body>
     <h1>Teste de tipos primitivos</h1>
     <?php
-        $num = 0b1010;
-        echo "O valor da variável é $num";
-
+        //$num = 0b1010;
+        //echo "O valor da variável é $num";
+        $valor = 300;
+        var_dump($valor);
     ?>
 </body>
 </html>
