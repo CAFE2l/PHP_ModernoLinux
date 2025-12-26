@@ -21,6 +21,7 @@
                 echo "O sucessor de $n é $suc";
             ?>
         </p>
+        <a href="index.html"><button>Voltar</button></a>
     </main>
 </body>
 </html>
