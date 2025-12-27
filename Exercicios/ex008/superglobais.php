@@ -20,6 +20,16 @@
 
                 echo "<h1>Supergglboal REQUEST</h1>";
                 var_dump($_REQUEST);
+
+                echo "<h1>Superglboal ENV</h1>";
+                var_dump($_ENV);
+
+                echo "<h1>SuperGlobal SERVER</h1>";
+                var_dump($_SERVER);
+
+
+                echo "<h1>SuperGlobal  GLOBLAS</h1>";
+                var_dump($GLOBALS);
             ?>
         </pre>
     </main>
