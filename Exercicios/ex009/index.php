@@ -14,7 +14,7 @@
         $valor2 = $_GET['v2'] ?? 0;
 
         $soma = $valor1 + $valor2;
-        echo "<h1>A soma entre $valor1 e $valor2 é igual a <span>$soma</span></h1>";
+
 
     ?>
 
@@ -26,7 +26,14 @@
             <label for="v2">Valor 2</label>
             <input type="number" name="v2" id="v2" value="<?= $valor2 ?>" required>
             <input type="submit" value="Calcular">
+           
         </form>
+        <section>
+            <h2>Resultado da Soma</h2>
+             <?php 
+                        echo "<p>A soma entre <strong>$valor1</strong> e <strong>$valor2</strong> é igual a <span><strong>$soma</strong></span></p>";
+            ?>
+        </section>
     </main> 
 </body>
 </html>
