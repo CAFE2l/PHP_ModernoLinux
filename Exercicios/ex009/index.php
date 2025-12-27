@@ -14,7 +14,7 @@
         $valor2 = $_GET['v2'] ?? 0;
 
         $soma = $valor1 + $valor2;
-
+        echo "<h1>A soma entre $valor1 e $valor2 é igual a <span>$soma</span></h1>";
 
     ?>
 
