@@ -1,0 +1,496 @@
+@charset "UTF-8";
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ELEMENTOS DA INTERFACE */
+
+body {
+    background-color: #0f0c29;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(55, 41, 145, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(21, 20, 43, 0.4) 0%, transparent 50%),
+        linear-gradient(180deg, #372991 0%, #15142b 70%, #0a081f 100%);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+header, main, section, article {
+    max-width: 700px;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header > h1 {
+    color: white;
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(55, 41, 145, 0.3);
+    font-size: 2.5em;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    background: linear-gradient(to right, #fff 0%, #e0d6ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+}
+
+main, section, article {
+    background: linear-gradient(145deg, #ffffff, #f8f7ff);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 16px;
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(55, 41, 145, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+main:hover, section:hover, article:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(55, 41, 145, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+footer {
+    display: block;
+    width: 100vw;
+    background: linear-gradient(90deg, #291f6c, #372991);
+    color: white;
+    text-align: center;
+    margin-top: auto;
+    padding: 15px;
+    font-size: 0.9em;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+}
+
+p {
+    text-align: justify;
+    line-height: 1.6em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+h2, h3, h4 {
+    color: #372991;
+    margin: 0 0 15px 0;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+h2::after, h3::after, h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #372991, #291f6c);
+    border-radius: 2px;
+}
+
+a {
+    color: #291f6c;
+    background: linear-gradient(to right, rgba(55, 41, 145, 0.1), rgba(55, 41, 145, 0.05));
+    padding: 2px 6px;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+a:hover {
+    color: #372991;
+    border-bottom: 2px solid #372991;
+    background: linear-gradient(to right, rgba(55, 41, 145, 0.15), rgba(55, 41, 145, 0.1));
+    transform: translateY(-1px);
+}
+
+a:hover::before {
+    left: 100%;
+}
+
+/* TABELAS E LISTAS */
+
+table {
+    min-width: 400px;
+    border-spacing: 0px;
+    border: 1px solid rgba(55, 41, 145, 0.2);
+    margin: 15px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+table th {
+    background: linear-gradient(135deg, #372991, #291f6c);
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #1f1847;
+}
+
+table td {
+    padding: 12px;
+    border-bottom: 1px solid rgba(55, 41, 145, 0.1);
+}
+
+table tr {
+    background-color: rgba(55, 41, 145, 0.05);
+    transition: background-color 0.3s ease;
+}
+
+table tr:hover {
+    background-color: rgba(55, 41, 145, 0.1);
+}
+
+table tr:nth-child(odd) {
+    background-color: rgba(55, 41, 145, 0.1);
+}
+
+table.divisao {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+table.divisao td {
+    background-color: white;
+    padding: 25px;
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #372991;
+    border: 2px solid rgba(55, 41, 145, 0.2);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+table.divisao td:hover {
+    background-color: rgba(55, 41, 145, 0.05);
+    transform: scale(1.02);
+}
+
+table.divisao tr:nth-child(1) td:nth-child(2) {
+    border-bottom: 3px solid #372991;
+    border-left: 3px solid #372991;
+}
+
+table.divisao tr:nth-child(2) td:nth-child(2) {
+    border-left: 3px solid #372991;
+}
+
+table.divisao tr:nth-child(2) td:nth-child(1) {
+    text-decoration: underline;
+    color: #291f6c;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+ul > li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 10px;
+}
+
+ul > li::marker {
+    color: #372991;
+    font-size: 1.2em;
+}
+
+ul > li::before {
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: #372991;
+    border-radius: 50%;
+}
+
+/* ELEMENTOS DE FORMULÁRIO */
+
+form {
+    background: linear-gradient(135deg, rgba(55, 41, 145, 0.15), rgba(55, 41, 145, 0.05));
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid rgba(55, 41, 145, 0.1);
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.05),
+        0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    width: fit-content;
+    font-size: 0.85em;
+    font-weight: 600;
+    background: linear-gradient(135deg, rgba(55, 41, 145, 0.2), rgba(55, 41, 145, 0.15));
+    padding: 6px 12px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    border-radius: 6px;
+    color: #291f6c;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type=text], 
+[type=number], 
+select, 
+input[type=date], 
+input[type=datetime], 
+input[type=email], 
+input[type=month], 
+input[type=password], 
+input[type=range], 
+input[type=tel], 
+input[type=time], 
+input[type=week] {
+    width: 100%;
+    padding: 14px;
+    font-size: 1em;
+    margin: 8px 0 20px 0;
+    display: inline-block;
+    border: 2px solid rgba(55, 41, 145, 0.2);
+    border-radius: 8px;
+    box-sizing: border-box;
+    background: white;
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #372991;
+    box-shadow: 
+        0 0 0 3px rgba(55, 41, 145, 0.1),
+        0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-1px);
+}
+
+input[type=submit] {
+    width: 100%;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    font-size: 1.1em;
+    color: white;
+    padding: 14px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
+}
+
+input[type=submit]:hover {
+    background: linear-gradient(135deg, #45a049, #3d8b40);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+input[type=reset] {
+    width: 100%;
+    background: linear-gradient(135deg, #eb9903, #c27013);
+    font-size: 1.1em;
+    color: white;
+    padding: 14px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+input[type=reset]:hover {
+    background: linear-gradient(135deg, #c27013, #a35c10);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+input[type=button], 
+button {
+    width: 100%;
+    background: linear-gradient(135deg, #372991, #291f6c);
+    font-size: 1.1em;
+    color: white;
+    padding: 14px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+input[type=button]::before,
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+input[type=button]:hover::before,
+button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+input[type=button]:hover, 
+button:hover {
+    background: linear-gradient(135deg, #291f6c, #1f1847);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+fieldset {
+    border: 1px dashed rgba(55, 41, 145, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+fieldset > legend {
+    font-size: 0.85em;
+    font-weight: 600;
+    background: linear-gradient(135deg, rgba(55, 41, 145, 0.2), rgba(55, 41, 145, 0.15));
+    padding: 6px 15px;
+    border-radius: 6px;
+    color: #291f6c;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type=radio] + label, 
+input[type=checkbox] + label {
+    display: inline-block;
+    font-size: 1em;
+    background: none;
+    color: #333;
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+input[type=radio]:checked + label,
+input[type=checkbox]:checked + label {
+    background: rgba(55, 41, 145, 0.15);
+    color: #291f6c;
+    font-weight: 600;
+}
+
+/* ANIMAÇÕES SUAVES */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main, section, article {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* SCROLLBAR PERSONALIZADA */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(21, 20, 43, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #372991, #291f6c);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #291f6c, #1f1847);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    
+    header, main, section, article {
+        max-width: 100%;
+    }
+    
+    header > h1 {
+        font-size: 2em;
+    }
+    
+    main, section, article {
+        padding: 20px;
+    }
+    
+    table {
+        min-width: 100%;
+    }
+}
