@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Reajustador de Preços</h1>
+        <form action="<?= $_SERVER['PHP_SELF'] ?>" method="get">
+            <label for="preco">Preço do Produto (R$)</label>
+            <input type="number" name="preco" id="preco" step="0.01" required min="0.10">
+
+            <label for="reaj">Qual será o percentual de reajuste? (<strong><span id="p">?%</span></strong>)</label>
+            <input type="range" name="reaj" id="reaj" min="0" max="100" value="0" step="1">
+
+            <input type="submit" value="Reajustar"
+        </form>
+    </main>
+
+    <section>
+        <h2>Resultado do Reajuste</h2>
+        <p>O produto que custava R$<?= number_format($preco, 2, ',', '.') ?>, com <strong><?= $reaj ?>% de aumento</strong> vai passar a custar
+        <strong>R$ <?= number_format($novoPreco, 2, ',', '.') ?></strong> a partir de agora.</p>
+    </section>
+</body>
+</html>
