@@ -7,23 +7,42 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <?php 
+        $preco = $_REQUEST['preco'] ?? 0;
+        $reaj = $_REQUEST['reaj'] ?? 0;
+    
+    ?>
+
     <main>
         <h1>Reajustador de Preços</h1>
         <form action="<?= $_SERVER['PHP_SELF'] ?>" method="get">
             <label for="preco">Preço do Produto (R$)</label>
-            <input type="number" name="preco" id="preco" step="0.01" required min="0.10">
+            <input type="number" name="preco" id="preco" step="0.01" required min="0.10" value="<?= $preco ?>">
 
-            <label for="reaj">Qual será o percentual de reajuste? (<strong><span id="p">?%</span></strong>)</label>
-            <input type="range" name="reaj" id="reaj" min="0" max="100" value="0" step="1">
+            <label for="reaj">Qual será o percentual de reajuste? (<strong><span id="p">?</span>%</strong>)</label>
+            <input type="range" name="reaj" id="reaj" min="0" max="100" value="0" step="1" oninput="mudaValor()" value="<?= $reaj ?>">
 
-            <input type="submit" value="Reajustar"
+            <input type="submit" value="Reajustar">
         </form>
     </main>
-
+    <?php 
+        $aumento = ($preco * $reaj) / 100;
+        $novoPreco = $preco + $aumento;    
+    
+    ?>
     <section>
-        <h2>Resultado do Reajuste</h2>
-        <p>O produto que custava R$<?= number_format($preco, 2, ',', '.') ?>, com <strong><?= $reaj ?>% de aumento</strong> vai passar a custar
-        <strong>R$ <?= number_format($novoPreco, 2, ',', '.') ?></strong> a partir de agora.</p>
+       <h2>Resultado do Reajuste</h2>
+       <p>O produto que custava R$<?= number_format($preco, 2, ',', '.') ?>, com <strong><?= $reaj ?>% de aumento</strong> vai passar a custar <strong>R$ <?= number_format($novoPreco, 2, ',', '.') ?></strong>
+    a partir de agora</p>
     </section>
+
+    <script>
+        //declarações atuomáticas
+        mudaValor();
+
+        function mudaValor(){
+            p.innerText = reaj.value;
+        }
+    </script>
 </body>
 </html>
